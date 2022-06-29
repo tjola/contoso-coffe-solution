@@ -7,12 +7,13 @@ var AlbanianXrm;
         (function(FormEvents){
             /**
              * 
-             * @param {Xrm.Events.EventContext} context 
+             * @param {Xrm.Events.BoundEventContext<Xrm.Ext.Forms.Account.main.Information>} context 
              */
             function onLoad(context){
-              var FormEventscontext = context.getFormContext();
-              var creditLimitControl = formContext.getControl('creditlimit');
-              var creditlimit = creditLimitControl.getAttribute().getValue();
+              var formContext = context.getFormContext();
+              var LastName = formContext.getControl('creditlimit');
+              var creditLimit = LastName.getAttribute().getValue();
+              console.log(creditLimit);
             }
             FormEvents.onLoad = onLoad;
         })(FormEvents = lead.FormEvents || (lead.FormEvents = {}));
